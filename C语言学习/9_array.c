@@ -21,7 +21,7 @@ int *getRandom()
     for(i=0; i<10; i++)
     {
         r[i] = rand();
-        printf("r[%d] = %d\n", r[i]);
+        printf("r[%d] = %d\n",i, r[i]%30);
     }
     return r;
 }
@@ -32,5 +32,12 @@ int main()
     int length;
     length = sizeof(a)/sizeof(a[0]);
     oneD_array(a,length);
+    printf("----------------\n");
+    int *p;
+    p = getRandom();
+    for(int i=0; i<10; i++)
+    {
+        printf("*(p+%d) = %d\n", i, *(p+i)%30);
+    }
     return 0;
 }

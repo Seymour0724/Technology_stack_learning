@@ -156,6 +156,8 @@ int main()
     int size = sizeof(arr)/sizeof(arr[0]);
     float res = getAverage(ptr,size);
     printf("数组的平均值为：%f\n", res);
+
+
     /*==============================*/
     int a[10];
     int *po = a;

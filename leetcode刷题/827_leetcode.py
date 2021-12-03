@@ -29,9 +29,24 @@ def largestIsland(grid):
                     if check[0]>=0 and check[1]>=0 and check[0]<n and check[1]<n:
                         if grid[check[0]][check[1]]==1:
                             cursor += 1
-                importance[cursor].append([row,col])
+                importance[cursor].append([row,col]) 
             col += 1
         row += 1
+    flag = 0
+    for weight in range(4,-1,-1):
+        if len(importance[weight])==0: continue
+        else: 
+            flag = weight
+            break
+    for point in importance[flag]:
+        grid[point[0]][point[1]] = 1
+        res = []
+        i = 0
+        while i<n:
+            j=0
+            while j<n:
+
+
     return importance
 
 if __name__ == "__main__":

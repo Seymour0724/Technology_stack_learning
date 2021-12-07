@@ -24,7 +24,7 @@ int removeElement(int* nums, int numsSize, int val){
             left++;
         }
     }
-    return left;
+    return right;
 }
 
 int main(){
@@ -32,6 +32,6 @@ int main(){
     int numsSize = 5;
     int val = 4;
     int res = removeElement(nums,numsSize,val);
-    printf("%d%d%d\n", nums[2],nums[3],nums[4]);
+    printf("%d%d%d\n", res,nums[3],nums[4]);
     return 0;
 }

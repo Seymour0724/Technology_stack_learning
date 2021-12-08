@@ -6,7 +6,7 @@ int removeElement(int* nums, int numsSize, int val){
     }
     int left = 0;
     int right = numsSize-1;
-    while(left<right){
+    while(left<=right){
         if(nums[left]==val){
             if(nums[right]==val){
                 right--;
@@ -24,14 +24,28 @@ int removeElement(int* nums, int numsSize, int val){
             left++;
         }
     }
-    return right;
+    return left;
+}
+
+int removeElement2(int* nums, int numsSize, int val){
+    int size = 0;
+    for (int i = 0; i <= numsSize - 1; i++)
+    {
+        if (nums[i] != val)
+        {
+            nums[size++] = nums[i];
+        }
+    }
+    return size;
 }
 
 int main(){
-    int nums[5] = {4,2,3,6,4};
-    int numsSize = 5;
+    int nums[11] = {4,4,4,4,4,5,6,7,8,9,10};
+    int numsSize = 11;
     int val = 4;
-    int res = removeElement(nums,numsSize,val);
-    printf("%d%d%d\n", res,nums[3],nums[4]);
+    int res = removeElement2(nums,numsSize,val);
+    for(int i=0; i<numsSize; i++){
+        printf("%d ",nums[i]);
+    }
     return 0;
 }

@@ -24,7 +24,8 @@ void test1(){
 
 void float_strucr(){
 	char strBin[33] = {0};
-	float f = -0.019625;
+	float f = 128.101;
+	printf("%f\n",f);
 	FP_SINGLE *p = (FP_SINGLE*)&f;
 
 	itoa(p->nSign,strBin,2);
